@@ -1,0 +1,108 @@
+// 这里面放一些公共的样式
+.colFlex{
+  display: flex;
+  flex-direction: column;
+}
+.rowFlex{
+  display: flex;
+  flex-direction: row;
+}
+.fullHeghtContent{
+  height: calc(calc(100vh) - 70px)
+  // @media 根据尺寸计算
+}
+.fullHeghtContent1{
+  height: calc(calc(100vh) - 20px)
+  // @media 根据尺寸计算
+}
+.fullHeghtContentWithHeader{
+  height: calc(calc(100vh) - 235px)
+  // @media 根据尺寸计算
+}
+.fullHeghtContentWithdown{
+  height: calc(calc(100vh) - 500px)
+  // @media 根据尺寸计算
+}
+//  allitemcenter里面的内容（如div））垂直居中，水平居中
+.allitemcenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+// rotate应用的div会360度旋转
+.rotate{
+  animation-name: rotate360;
+  animation-duration: 20000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+@import "variable";
+
+// 根据width进行媒体查询控制
+@mixin WLessXS{
+  @media all and (max-width: $xsW-1 ){
+    @content
+  }
+}
+@mixin WMoreXSLessSM{
+  @media all and (max-width: $smW-1 ) and (min-width: $xsW) {
+    @content
+  }
+}
+@mixin WMoreSMLessMD{
+  @media all and (max-width: $mdW-1 ) and (min-width: $smW) {
+    @content
+  }
+}
+
+@mixin WMoreMDLessLG{
+  @media all and (max-width: $lgW-1 ) and (min-width: $mdW) {
+    @content
+  }
+}
+@mixin WMoreLG{
+  @media all and (min-width: $lgW){
+    @content
+  }
+}
+
+// 根据height进行媒体查询
+@mixin HLessXS{
+  @media all and (max-height: $xsH-1 ){
+    @content
+  }
+}
+@mixin HMoreXSLessSM{
+  @media all and (max-height: $smH-1 ) and (min-height: $xsH) {
+    @content
+  }
+}
+@mixin HMoreSMLessMD{
+  @media all and (max-height: $mdH-1 ) and (min-height: $smH) {
+    @content
+  }
+}
+
+@mixin HMoreMDLessLG{
+  @media all and (max-height: $lgH-1 ) and (min-height: $mdH) {
+    @content
+  }
+}
+@mixin HMoreLG{
+  @media all and (min-height: $lgH){
+    @content
+  }
+}
+$blue-color:#267ec5;
+$red-color:#c52736;
